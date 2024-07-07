@@ -406,9 +406,8 @@ __go_to_window_or_session_path() {
     target_path="$session_root"
   fi
 
-  # local window_or_session_root=${window_root-$session_root}
-  if [ -n "$target_path" ]; then
-    run_cmd "cd \"$target_path\""
-    run_cmd "clear"
-  fi
+   local window_or_session_root=${window_root-$session_root}
+   if [ -n "$target_path" ]; then
+     run_cmd "cf \"$target_path\""
+   fi
 }
